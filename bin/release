@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+echo "Building Gem..."
+gem build eloquant.gemspec
+
+VERSION=$(cat lib/eloquant/version.rb | grep VERSION | awk '{print $3}' | sed 's/"//g')
+TAG_VERSION="v$VERSION"
+
+echo "Pushing to Rubygems..."
+gem push "eloquant-$VERSION.gem"
+
+echo "Tagging the repository at version $TAG_VERSION..."
+git tag "$TAG_VERSION"
+
+echo "Pushing the tag to the origin's repository..."
+git push origin "$TAG_VERSION"
+
+echo "Successfully released eloquant"

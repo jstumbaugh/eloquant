@@ -41,3 +41,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Eloquant project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/jstumbaugh/eloquant/blob/master/CODE_OF_CONDUCT.md).
+
+## Releasing to [RubyGems](https://rubygems.org/gems/eloquant)
+
+Use the `bin/release` script to build, push, and tag this gem.
