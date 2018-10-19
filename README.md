@@ -1,11 +1,17 @@
+<div align="center">
+
+![Imgur](https://i.imgur.com/GVZPW02.png)
+
 # Eloquant
 
-An [eloquent [w]rapper](https://www.youtube.com/watch?v=eXvBjCO19QY) for Eloqua's [REST API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/rest-endpoints.html)
+#### An [eloquent [w]rapper](https://www.youtube.com/watch?v=eXvBjCO19QY) for Oracle Eloqua's [REST API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/rest-endpoints.html)
 
 [![Build Status](https://travis-ci.org/jstumbaugh/eloquant.svg?branch=master)](https://travis-ci.org/jstumbaugh/eloquant)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/66148a40fdaa015d4006/test_coverage)](https://codeclimate.com/github/jstumbaugh/eloquant/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/66148a40fdaa015d4006/maintainability)](https://codeclimate.com/github/jstumbaugh/eloquant/maintainability)
 [![Gem Version](https://badge.fury.io/rb/eloquant.svg)](https://badge.fury.io/rb/eloquant)
+
+</div>
 
 ## Installation
 
