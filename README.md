@@ -4,7 +4,7 @@
 
 # Eloquant
 
-#### An wrapper for Oracle Eloqua's [REST API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/rest-endpoints.html)
+#### A wrapper for Oracle Eloqua's [REST API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/rest-endpoints.html)
 
 [![Build Status](https://travis-ci.org/jstumbaugh/eloquant.svg?branch=master)](https://travis-ci.org/jstumbaugh/eloquant)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/66148a40fdaa015d4006/test_coverage)](https://codeclimate.com/github/jstumbaugh/eloquant/test_coverage)
