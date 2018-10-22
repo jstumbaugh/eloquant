@@ -1,17 +1,28 @@
 require "bundler/setup"
-require "eloquant"
 require "simplecov"
+require "eloquant"
 
 SimpleCov.start
+Bundler.setup
+
+Dir[File.expand_path("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
-  # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+  config.default_formatter = :doc if config.files_to_run.one?
 
-  # Disable RSpec exposing methods globally on `Module` and `main`
-  config.disable_monkey_patching!
+  config.expect_with :rspec do |expectations|
+    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  end
 
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
+  config.order = :random
+  Kernel.srand config.seed
+
+  config.expect_with :rspec do |expectations|
+    expectations.syntax = :expect
+  end
+
+  config.mock_with :rspec do |mocks|
+    mocks.syntax = :expect
+    mocks.verify_partial_doubles = true
   end
 end
