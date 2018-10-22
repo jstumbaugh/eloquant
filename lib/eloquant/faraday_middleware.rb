@@ -2,7 +2,7 @@ require "faraday"
 
 module Eloquant
   module FaradayMiddleware
-    autoload :Response, "mrkt/faraday_middleware/response"
+    autoload :Response, "eloquant/faraday_middleware/response"
   end
 
   if Faraday::Middleware.respond_to?(:register_middleware)
