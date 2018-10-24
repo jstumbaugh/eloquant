@@ -13,9 +13,9 @@ module Eloquant
 
     def initialize(options = {})
       # Required
-      @username      = options.fetch(:username)
-      @sitename      = options.fetch(:sitename)
-      @password      = options.fetch(:password)
+      @username = options.fetch(:username, ENV["ELOQUA_USERNAME"])
+      @sitename = options.fetch(:sitename, ENV["ELOQUA_SITENAME"])
+      @password = options.fetch(:password, ENV["ELOQUA_PASSWORD"])
 
       # Optional
       @max_retries = options.fetch(:max_retries, 10)
