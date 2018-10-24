@@ -6,8 +6,12 @@ module Eloquant
       @connection ||= init_connection
     end
 
+    def reload_connection
+      @connection = init_connection
+    end
+
     def init_connection
-      Faraday.new(url: "https://#{@host}") do |conn|
+      Faraday.new(url: @host) do |conn|
         conn.request :multipart
         conn.request :url_encoded
 
