@@ -12,7 +12,7 @@ module Eloquant
       Base64.encode64("#{@sitename}\\#{@username}:#{@password}")
     end
 
-    def set_host_url
+    def set_host_url_to_clients_url
       @host = host_information[:urls][:base]
 
       reload_connection
