@@ -13,7 +13,7 @@ RSpec.describe Eloquant::Client do
       end
     end
 
-    client = Eloquant::Client.new(host: host, client_id: client_id, client_secret: client_secret, connection: conn)
+    client.connection = conn
 
     expect(client.connection.get("/fish").body).to eq("salmon")
     expect(logger_double).to have_received(:debug).at_least(:once)

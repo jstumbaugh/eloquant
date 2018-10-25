@@ -2,6 +2,8 @@ require "eloquant/faraday_middleware"
 
 module Eloquant
   module Connection
+    attr_accessor :connection
+
     def connection
       @connection ||= init_connection
     end
