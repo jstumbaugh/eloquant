@@ -33,9 +33,53 @@ ELOQUA_SITENAME='mycompany'
 ELOQUA_PASSWORD='password'
 ```
 
+---------
+
 ### Available Endpoints
 
+#### Accounts
 
+- `describe_accounts` - Return the list of fields for an Account
+- `describe_accounts_csv` - Return the list of fields for an Account as a CSV formatted string
+
+#### Activities
+
+- `describe_activities` - Return the list of fields for an Activity
+- `describe_activities_csv` - Return the list of fields for an Activity as a CSV formatted string
+
+#### Campaign Responses
+
+- `describe_campaign_responses` - Return the list of fields for a Campaign Response
+- `describe_campaign_responses_csv` - Return the list of fields for a Campaign Response as a CSV formatted string
+
+#### Campaigns
+
+- `describe_campaigns` - Return the list of fields for a Campaign
+- `describe_campaigns_csv` - Return the list of fields for a Campaign as a CSV formatted string
+
+#### Contacts
+
+- `describe_contacts` - Return the list of fields for a Contact
+- `describe_contacts_csv` - Return the list of fields for a Contact as a CSV formatted string
+
+#### Custom Objects
+
+- No describe is available for Custom Objects
+
+#### Events
+
+- No describe is available for Events
+
+#### External Activities
+
+- No describe is available for External Activities
+
+#### Opportunities
+
+- `describe_opportunities` - Return the list of fields for an Opportunity
+- `describe_opportunities_csv` - Return the list of fields for an Opportunity as a CSV formatted string
+
+-----------
 
 ## Installation
 
