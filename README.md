@@ -15,7 +15,27 @@
 
 ## Usage
 
-TODO: Usage
+### Client Instantiation
+
+Eloquant uses Basic HTTP Authentication for retrieving data from Eloqua. You
+need to supply the username, site/company name, and password when initializing
+the client.
+
+```ruby
+Eloquant::Client.new(username: "username", sitename: "mycompany", password: "password")
+```
+
+Alternatively, you can store these variables in your environment file:
+
+```
+ELOQUA_USERNAME='username'
+ELOQUA_SITENAME='mycompany'
+ELOQUA_PASSWORD='password'
+```
+
+### Available Endpoints
+
+
 
 ## Installation
 
