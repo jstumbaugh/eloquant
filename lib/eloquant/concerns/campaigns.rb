@@ -4,10 +4,8 @@ module Eloquant
       get("/api/bulk/2.0/campaigns/fields")
     end
 
-    def describe_campaigns_csv(params = {}, custom_headers = {})
-      custom_headers["Content-Type"] = "text/csv"
-
-      get("/api/bulk/2.0/campaigns/fields", params, custom_headers)
+    def describe_campaigns_csv(params = {})
+      get("/api/bulk/2.0/campaigns/fields", params, csv_custom_headers)
     end
   end
 end

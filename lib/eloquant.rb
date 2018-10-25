@@ -1,8 +1,9 @@
 require "eloquant/version"
 require "eloquant/errors"
 
-require "eloquant/concerns/connection"
 require "eloquant/concerns/authentication"
+require "eloquant/concerns/connection"
+require "eloquant/concerns/helpers"
 
 require "eloquant/concerns/accounts"
 require "eloquant/concerns/activities"
@@ -22,8 +23,9 @@ module Eloquant
   class Client
     DEFAULT_HOST_URL = "https://login.eloqua.com".freeze
 
-    include Connection
     include Authentication
+    include Connection
+    include Helpers
 
     include Accounts
     include Activities
