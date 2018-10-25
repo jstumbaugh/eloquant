@@ -27,11 +27,15 @@ module Eloquant
     end
 
     %i(get post).each do |http_method|
-      define_method(http_method) do |path, payload = {}, &block|
+      define_method(http_method) do |path, payload = {}, custom_headers = {}, &block|
         set_host_url_if_default
 
         response = connection.send(http_method, path, payload) do |request|
           add_authorization(request)
+
+          custom_headers.each do |key, value|
+            request.headers[key] = value
+          end
 
           block.call(request) unless block.nil?
         end
