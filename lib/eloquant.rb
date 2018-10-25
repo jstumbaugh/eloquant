@@ -4,6 +4,16 @@ require "eloquant/errors"
 require "eloquant/concerns/connection"
 require "eloquant/concerns/authentication"
 
+require "eloquant/concerns/accounts"
+require "eloquant/concerns/activities"
+require "eloquant/concerns/campaign_responses"
+require "eloquant/concerns/campaigns"
+require "eloquant/concerns/contacts"
+require "eloquant/concerns/custom_objects"
+require "eloquant/concerns/events"
+require "eloquant/concerns/external_activities"
+require "eloquant/concerns/opportunities"
+
 module Eloquant
   def self.client(options = {})
     Client.new(options)
@@ -14,6 +24,16 @@ module Eloquant
 
     include Connection
     include Authentication
+
+    include Accounts
+    include Activities
+    include CampaignResponses
+    include Campaigns
+    include Contacts
+    include CustomObjects
+    include Events
+    include ExternalActivities
+    include Opportunities
 
     def initialize(options = {})
       # Required
