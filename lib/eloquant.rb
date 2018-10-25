@@ -5,6 +5,10 @@ require "eloquant/concerns/connection"
 require "eloquant/concerns/authentication"
 
 module Eloquant
+  def self.client(options = {})
+    Client.new(options)
+  end
+
   class Client
     DEFAULT_HOST_URL = "https://login.eloqua.com".freeze
 
