@@ -27,8 +27,11 @@ module Eloquant
       sync_uri
     end
 
-    def get_export_data(sync_uri, offset: 0)
-      get("/api/bulk/2.0#{sync_uri}/data", offset: offset)
+    def get_export_data(sync_uri, offset: nil)
+      params = {}
+      params[:offset] = offset if offset
+
+      get("/api/bulk/2.0#{sync_uri}/data", params)
     end
 
     def list_account_exports
