@@ -2,11 +2,19 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+VERSION=$(grep VERSION lib/eloquant/version.rb | awk '{print $3}' | sed 's/"//g')
+TAG_VERSION="v$VERSION"
+
+echo "Bundling..."
+bundle install
+
+echo "Adding changed Gemfile.lock and pushing to GitHub before tagging"
+git add Gemfile.lock
+git commit -m "Update Gemfile.lock for $TAG_VERSION"
+git push origin master
+
 echo "Building Gem..."
 gem build eloquant.gemspec
-
-VERSION=$(cat lib/eloquant/version.rb | grep VERSION | awk '{print $3}' | sed 's/"//g')
-TAG_VERSION="v$VERSION"
 
 echo "Pushing to Rubygems..."
 gem push "eloquant-$VERSION.gem"
@@ -16,5 +24,8 @@ git tag "$TAG_VERSION"
 
 echo "Pushing the tag to the origin's repository..."
 git push origin "$TAG_VERSION"
+
+echo "Moving local gem into the pkg/ directory"
+mv "eloquant-$VERSION.gem" pkg/
 
 echo "Successfully released eloquant"
