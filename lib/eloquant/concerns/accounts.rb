@@ -1,11 +1,11 @@
 module Eloquant
   module Accounts
     def describe_accounts
-      get("/api/bulk/2.0/accounts/fields")
+      describe_endpoint("accounts")
     end
 
-    def describe_accounts_csv(params = {})
-      get("/api/bulk/2.0/accounts/fields", params, csv_custom_headers)
+    def describe_accounts_csv
+      describe_endpoint_csv("accounts")
     end
 
     def number_of_accounts

@@ -1,11 +1,11 @@
 module Eloquant
   module Contacts
     def describe_contacts
-      get("/api/bulk/2.0/contacts/fields")
+      describe_endpoint("contacts")
     end
 
-    def describe_contacts_csv(params = {})
-      get("/api/bulk/2.0/contacts/fields", params, csv_custom_headers)
+    def describe_contacts_csv
+      describe_endpoint_csv("contacts")
     end
 
     def number_of_contacts

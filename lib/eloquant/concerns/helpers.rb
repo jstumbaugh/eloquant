@@ -16,6 +16,14 @@ module Eloquant
       get("/api/rest/1.0/data/#{endpoint}", count: 1).try(:[], :total)
     end
 
+    def describe_endpoint(endpoint)
+      get("/api/bulk/2.0/#{endpoint}/fields")
+    end
+
+    def describe_endpoint_csv(endpoint, params = {})
+      get("/api/bulk/2.0/#{endpoint}/fields", params, csv_custom_headers)
+    end
+
     def create_bulk_export(endpoint, params)
       response   = initialize_bulk_export(endpoint, params)
       export_uri = response[:uri]
