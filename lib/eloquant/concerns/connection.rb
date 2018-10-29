@@ -23,7 +23,7 @@ module Eloquant
                       ::Faraday::Error::TimeoutError,
                       ::Faraday::ConnectionFailed]
 
-        conn.response :logger if @debug
+        conn.response :logger, @logger if @debug && @logger
         conn.response :eloquant, content_type: /\bjson$/
 
         conn.options.timeout      = @options[:read_timeout] if @options.key?(:read_timeout)

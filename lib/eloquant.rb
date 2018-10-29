@@ -47,6 +47,7 @@ module Eloquant
       @max_retries = options.fetch(:max_retries, 10)
       @connection  = options.fetch(:connection, nil)
       @debug       = options.fetch(:debug, true)
+      @logger      = options.fetch(:logger, nil)
       @host        = options.fetch(:host, DEFAULT_HOST_URL)
 
       @options = options
