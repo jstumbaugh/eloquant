@@ -8,6 +8,15 @@ module Eloquant
       get("/api/bulk/2.0/accounts/fields", params, csv_custom_headers)
     end
 
+    def get_account(eloqua_external_id, depth: :complete)
+      params = {
+        search: "CompanyIDExt='#{eloqua_external_id}'",
+        depth: depth,
+      }
+
+      get("/api/rest/1.0/data/accounts", params)
+    end
+
     def create_bulk_account_export(params = {})
       response   = create_account_export(params)
       export_uri = response[:uri]
