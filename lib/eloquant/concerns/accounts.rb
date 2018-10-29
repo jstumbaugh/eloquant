@@ -47,8 +47,13 @@ module Eloquant
       get("/api/bulk/2.0/accounts/exports")
     end
 
+    # ID is the digits of the URI
     def delete_account_export(id:)
       delete("/api/bulk/2.0/accounts/exports/#{id}")
+    end
+
+    def number_of_accounts
+      get("/api/rest/1.0/data/accounts", count: 1).try(:[], :total)
     end
 
     private
