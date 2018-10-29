@@ -8,6 +8,10 @@ module Eloquant
       get("/api/bulk/2.0/accounts/fields", params, csv_custom_headers)
     end
 
+    def number_of_accounts
+      count_endpoint("accounts")
+    end
+
     def get_account(eloqua_external_id, depth: :complete)
       params = {
         search: "CompanyIDExt='#{eloqua_external_id}'",
@@ -25,13 +29,8 @@ module Eloquant
       list_bulk_exports("accounts")
     end
 
-    # ID is the digits of the URI
     def delete_account_export(id:)
       delete_bulk_export("accounts", id)
-    end
-
-    def number_of_accounts
-      count_endpoint("accounts")
     end
   end
 end
