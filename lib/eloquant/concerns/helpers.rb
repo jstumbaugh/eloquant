@@ -12,6 +12,10 @@ module Eloquant
       post(path, JSON.generate(params), json_custom_headers)
     end
 
+    def count_endpoint(endpoint)
+      get("/api/rest/1.0/data/#{endpoint}", count: 1).try(:[], :total)
+    end
+
     def create_bulk_export(endpoint, params)
       response   = initialize_bulk_export(endpoint, params)
       export_uri = response[:uri]

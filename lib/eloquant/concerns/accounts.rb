@@ -31,7 +31,7 @@ module Eloquant
     end
 
     def number_of_accounts
-      get("/api/rest/1.0/data/accounts", count: 1).try(:[], :total)
+      count_endpoint("accounts")
     end
   end
 end
