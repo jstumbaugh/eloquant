@@ -43,11 +43,12 @@ module Eloquant
       sync_uri
     end
 
-    def initialize_bulk_export(endpoint, name: nil, fields: {})
+    def initialize_bulk_export(endpoint, name: nil, fields: {}, filter: nil)
       params = {
         name:   name || "Eloquant #{endpoint.capitalize} Bulk Export",
         fields: fields,
       }
+      params[:filter] = filter if !filter.nil?
 
       json_post("/api/bulk/2.0/#{endpoint}/exports", params)
     end
