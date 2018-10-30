@@ -22,10 +22,6 @@ module Eloquant
       list_bulk_exports(activities)
     end
 
-    def delete_activity_export(id:)
-      delete_bulk_export(activities, id)
-    end
-
     private
 
       def activities

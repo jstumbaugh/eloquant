@@ -28,9 +28,5 @@ module Eloquant
     def list_contact_exports
       list_bulk_exports("contacts")
     end
-
-    def delete_contact_export(id:)
-      delete_bulk_export("contacts", id)
-    end
   end
 end

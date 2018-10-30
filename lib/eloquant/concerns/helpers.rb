@@ -78,9 +78,5 @@ module Eloquant
     def list_bulk_exports(endpoint)
       get("/api/bulk/2.0/#{endpoint}/exports")
     end
-
-    def delete_bulk_export(endpoint, id)
-      delete("/api/bulk/2.0/#{endpoint}/exports/#{id}")
-    end
   end
 end

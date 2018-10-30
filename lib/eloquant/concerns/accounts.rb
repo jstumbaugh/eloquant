@@ -28,9 +28,5 @@ module Eloquant
     def list_account_exports
       list_bulk_exports("accounts")
     end
-
-    def delete_account_export(id:)
-      delete_bulk_export("accounts", id)
-    end
   end
 end
