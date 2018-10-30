@@ -1,5 +1,5 @@
 module Eloquant
-  class Errors
+  module Errors
     class Error < StandardError
     end
 
@@ -10,6 +10,7 @@ module Eloquant
     Unknown            = create_class
     EmptyResponse      = create_class
     AuthorizationError = create_class
+    BulkExportCreationError = create_class
 
     RESPONSE_CODE_TO_ERROR = {}.freeze
 

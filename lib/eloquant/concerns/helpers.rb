@@ -25,7 +25,12 @@ module Eloquant
     end
 
     def create_bulk_export(endpoint, params)
-      response   = initialize_bulk_export(endpoint, params)
+      response = initialize_bulk_export(endpoint, params)
+
+      if response.has_key?(:failures)
+        fail Eloquant::Errors::BulkExportCreationError.new(response[:failures])
+      end
+
       export_uri = response[:uri]
 
       status_response = enqueue_export(export_uri)
