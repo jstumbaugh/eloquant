@@ -1,15 +1,15 @@
 module Eloquant
   module Accounts
     def describe_accounts
-      describe_endpoint("accounts")
+      describe_endpoint(accounts)
     end
 
     def describe_accounts_csv
-      describe_endpoint_csv("accounts")
+      describe_endpoint_csv(accounts)
     end
 
     def number_of_accounts
-      count_endpoint("accounts")
+      count_endpoint(accounts)
     end
 
     def get_account(eloqua_external_id, depth: :complete)
@@ -22,11 +22,17 @@ module Eloquant
     end
 
     def create_bulk_account_export(params = {})
-      create_bulk_export("accounts", params)
+      create_bulk_export(accounts, params)
     end
 
     def list_account_exports
-      list_bulk_exports("accounts")
+      list_bulk_exports(accounts)
     end
+
+    private
+
+      def accounts
+        "accounts"
+      end
   end
 end

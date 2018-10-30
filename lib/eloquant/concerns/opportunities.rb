@@ -1,11 +1,17 @@
 module Eloquant
   module Opportunities
     def describe_opportunities
-      describe_endpoint("opportunities")
+      describe_endpoint(opportunities)
     end
 
     def describe_opportunities_csv
-      describe_endpoint_csv("opportunities")
+      describe_endpoint_csv(opportunities)
     end
+
+    private
+
+      def opportunities
+        "opportunities"
+      end
   end
 end
