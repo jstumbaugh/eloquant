@@ -9,12 +9,7 @@ module Eloquant
     end
 
     # Filter is the name of the activity type
-    def create_bulk_activity_export(fields:, filter:)
-      params = {
-        fields: fields,
-        filter: filter,
-      }
-
+    def create_bulk_activity_export(params = {})
       create_bulk_export(activities, params)
     end
 
