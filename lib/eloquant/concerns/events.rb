@@ -1,5 +1,7 @@
 module Eloquant
   module Events
-    # No describe available for events
+    def list_events
+      get("/api/bulk/2.0/events")
+    end
   end
 end
