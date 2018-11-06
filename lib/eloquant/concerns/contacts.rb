@@ -29,6 +29,10 @@ module Eloquant
       list_bulk_exports(contacts)
     end
 
+    def list_lead_scoring_models
+      get("/api/bulk/2.0/contacts/scoring/models")
+    end
+
     private
 
       def contacts
